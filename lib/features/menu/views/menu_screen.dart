@@ -15,7 +15,7 @@ class MenuScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF3C5A99),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 28),
+          padding: const EdgeInsets.symmetric(horizontal: 22),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
