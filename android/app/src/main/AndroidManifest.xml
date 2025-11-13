@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="realstate_ui_mark_one"
+        android:label="Real Estate App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

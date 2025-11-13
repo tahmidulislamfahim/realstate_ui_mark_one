@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:realstate_ui_mark_one/features/home/controllers/home_controller.dart';
+import 'package:realstate_ui_mark_one/routes/app_routes.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -15,7 +16,7 @@ class MenuScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF3C5A99),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 22),
+          padding: const EdgeInsets.only(right: 22),
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
@@ -109,7 +110,21 @@ class MenuScreen extends StatelessWidget {
     final iconColor = selected ? _bg : Colors.white;
 
     return GestureDetector(
-      onTap: () => controller.toggleMenu(false),
+      onTap: () async {
+        await controller.toggleMenu(false);
+        // navigate or show snackbar depending on item
+        if (title.toLowerCase() == 'home') {
+          // navigate to home route
+          Get.offAllNamed(Routes.home);
+        } else {
+          Get.snackbar(
+            title,
+            'This page is not implemented yet',
+            margin: const EdgeInsets.all(12),
+            colorText: Colors.black,
+          );
+        }
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Row(
